@@ -2,6 +2,19 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+void insertionsort(int arr[],int n){
+    for (int  i = 0; i <= n-1; i++)
+    {
+        int j=i;
+        while (j>0 && arr[j-1]>arr[j])
+        {
+            swap(arr[j],arr[j-1]);
+            j--;
+        }
+        
+    }
+    
+}
 void bubblesort(int arr[], int n)
 {
     bool swapped;
@@ -42,7 +55,7 @@ int main()
     int n = 5;
     int arr[n] = {4, 8, 15, 12, 7};
     // selectionsort(arr, n);
-    bubblesort(arr, n);
+    insertionsort(arr, n);
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
