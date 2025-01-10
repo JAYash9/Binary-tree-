@@ -4,21 +4,25 @@
 using namespace std;
 int partionindex(int arr[], int low, int high)
 {
-    int pivot=arr[low];
-    int i=low;
-    int j=high;
-    while(i<j){
-        while(arr[i]<=pivot&& i<=high-1){
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    while (i < j)
+    {
+        while (arr[i] <= pivot && i <= high - 1)
+        {
             i++;
         }
-        while(arr[j]>pivot&& j>=low+1){
+        while (arr[j] > pivot && j >= low + 1)
+        {
             j--;
         }
-        if(i<j){
-            swap(arr[i],arr[j]);
+        if (i < j)
+        {
+            swap(arr[i], arr[j]);
         }
     }
-    swap(arr[low],arr[j]);
+    swap(arr[low], arr[j]);
     return j;
 }
 void quicksort(int arr[], int low, int high)
@@ -127,7 +131,7 @@ int main()
     int arr[n] = {4, 8, 15, 12, 7};
     int low = 0;
     int high = n - 1;
-    quicksort(arr,low,high);
+    quicksort(arr, low, high);
 
     // mergersort(arr, low, high);
     // insertionsort(arr, n);
